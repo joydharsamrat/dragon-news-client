@@ -21,7 +21,7 @@ const Header = () => {
     return (
         <Navbar className='mb-5' collapseOnSelect expand="lg" bg="light" variant="light">
             <Container>
-                <Navbar.Brand><Link to='/'>Dragon News</Link></Navbar.Brand>
+                <Navbar.Brand><Link style={{ textDecoration: 'none', color: 'black', fontWeight: '800' }} to='/'>Dragon News</Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">

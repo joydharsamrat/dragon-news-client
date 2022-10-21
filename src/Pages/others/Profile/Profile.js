@@ -1,6 +1,7 @@
 import React, { useContext, useRef, useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
+import { useNavigate } from 'react-router-dom';
 import { authContext } from '../../../contexts/AuthProvider/AuthProvider';
 
 
@@ -8,12 +9,12 @@ const Profile = () => {
     const { user, updateUserProfile } = useContext(authContext);
     const [name, setName] = useState(user.displayName);
     const photoURLRef = useRef(user.photoURL);
-
+    const navigate = useNavigate();
     const handelSubmit = (event) => {
-        // event.preventDefault();
+        event.preventDefault();
         // const form = event.target;
         handelUserProfileUpdate(name, photoURLRef.current.value)
-
+        navigate('/')
     }
 
     const handelUserProfileUpdate = (name, photo) => {
